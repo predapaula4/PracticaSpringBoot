@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Hello from index
+<br>
+<span th:text="${greetings}"/>
+<br>
+
+<div th:each="car : ${carList}"/>
+<span th:text="${car}"/>
+</div>
+
+<div>
+    <table>
+        <thread>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Salary</td>
+        </thread>
+        <tbody>
+        <tr th:each="employee: ${employeeList}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.salary}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

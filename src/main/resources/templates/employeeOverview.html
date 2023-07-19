@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Overview</title>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" type="text/css">
+</head>
+<body>
+
+<div class="container-fluid row col-8">
+
+    <div>
+        <h3>Employee Overview</h3>
+    </div>
+
+    <div class="row col-6">
+        <table class="table table-bordered table-striped">
+            <thead>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Salary</th>
+            <th>Dep. code</th>
+            <th>Dep. name</th>
+            </thead>
+            <tbody>
+            <tr th:each="employee : ${employeeList}">
+                <td th:text="${employee.id}"/>
+                <td th:text="${employee.firstName}"/>
+                <td th:text="${employee.lastName}"/>
+                <td th:text="${employee.salary}"/>
+                <td th:text="${employee.department.code}"/>
+                <td th:text="${employee.getDepartmentName()}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"/>
+</html>
